@@ -1,75 +1,28 @@
 body{
-	padding-top: 120px;
-	&#project-analysis{
-		padding-bottom: 120px;
-	}
-}
-
-.container{
-	min-width: 480px;
+	background: white url(../images/master-bg.jpg) left top repeat;
+	font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.3;
 }
 
 header{
-	nav.navbar-fixed-top{
-		padding-top: 6px;
-		background: #1d232e;
-		// background-image: url(../images/dark_exa.png);
-		// background-repeat: repeat;
-		// background-position: 0 0;
-		a.navbar-brand{
-			padding: 6px 15px;
-			img.img-responsive{
-				max-height: 68px;
+	ul.main-nav{
+		list-style-type: none;
+		margin: 0px;
+		li{
+			float: left;
+			a{
+				text-transform: uppercase;
+				display: inline-block;
+				*display: inline;
+				zoom: 1;
+			}
+			&:before{
+				content: " | ";
+			}
+			&:first-child:before{
+				content: '';
 			}
 		}
-		ul.nav{
-			padding: 15px 0px;
-			margin: 0px 20px 0 0;
-		}
-		form.navbar-form{
-			padding: 15px 0px;
-			.col-xs-3;
-		}
-	}
-}
-
-#main{
-	min-height: 600px;
-}
-
-footer{
-	@blue: #1d232e;
-	padding: 200px 0 0 0;
-	height: 300px;
-	position: relative;
-	.box-shadow(inset 0px 0px 100px 80px rgba(red(@blue), green(@blue), blue(@blue), .03));
-	overflow: hidden;
-	border-top: 1px solid @blue;
-	margin-top: 40px;
-
-	div.background-holder{
-		position: absolute;
-		bottom: 0px;
-		right: -200px;
-		width: 1000px;
-		height: 400px;
-		background: transparent url(../images/footer-bg.jpg) center center no-repeat;
-		background-size: 100%;
-		z-index: -1;
-		.opacity(.4);
-	}
-}
-
-.affix-top{
-	position: static;
-}
-
-.affix-bottom{
-	position: absolute;
-}
-
-@media all and (max-width: 767px){
-	.affix-top, .affix, .affix-bottom{
-		position: static;
 	}
 }

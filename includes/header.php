@@ -32,12 +32,12 @@
 						<span class="icon-bar"></span>
 					</a>
 				</div>
-				<ul class="nav-left">
+				<ul class="main-nav nav-left clearfix">
 					<?php foreach($menu_left as $page): ?>
 					<li <?= ($page == $current_page) ? ' class="active"' : ''; ?>><a href="<?= $page.'.php'; ?>"><?= ucfirst($page); ?></a></li> 
 					<?php endforeach; ?>
 				</ul>
-				<ul class="nav-right">
+				<ul class="main-nav nav-right clearfix">
 					<?php foreach($menu_right as $page): ?>
 					<li <?= ($page == $current_page) ? ' class="active"' : ''; ?>><a href="<?= $page.'.php'; ?>"><?= ucfirst($page); ?></a></li> 
 					<?php endforeach; ?>
