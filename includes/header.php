@@ -7,7 +7,7 @@
 		$menu_left = array('home', 'skis', 'goods');
 		$menu_right = array('family', 'media', 'about');
 	?>
-	<title>HG Skis :: <?= ucfirst($current_page); ?></title>
+	<title>HG Skis | <?= ucfirst($current_page); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<!--[if lt IE 9]>
@@ -19,7 +19,7 @@
 	<script type="text/javascript" src="js/jquery.fitvid.js"></script>
 	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 </head>
-<body>
+<body <?= ($current_page = 'home') ? 'class="static-header"' : ''; ?>>
 	<header class="clearfix">
 		<nav class="navbar" role="navigation">
 			<div class="container">
@@ -32,12 +32,12 @@
 						<span class="icon-bar"></span>
 					</a>
 				</div>
-				<ul class="main-nav nav-left clearfix">
+				<ul class="main-nav nav-left">
 					<?php foreach($menu_left as $page): ?>
 					<li <?= ($page == $current_page) ? ' class="active"' : ''; ?>><a href="<?= $page.'.php'; ?>"><?= ucfirst($page); ?></a></li> 
 					<?php endforeach; ?>
 				</ul>
-				<ul class="main-nav nav-right clearfix">
+				<ul class="main-nav nav-right">
 					<?php foreach($menu_right as $page): ?>
 					<li <?= ($page == $current_page) ? ' class="active"' : ''; ?>><a href="<?= $page.'.php'; ?>"><?= ucfirst($page); ?></a></li> 
 					<?php endforeach; ?>
