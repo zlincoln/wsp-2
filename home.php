@@ -9,9 +9,21 @@
 				</div>
 			</li>
 			<li>
-				<img src="http://placehold.it/3000x1000" alt="placeholder image">
+				<iframe src="//player.vimeo.com/video/74658496?portrait=0" width="520" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				<div class="caption">
-					<p>Example caption for the image, its really long.  Really Really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long.</p>
+					<p>We brought Cole along on an urban trip halfway through this past season and from then on we knew he was a perfect addition to the crew. Were happy to announce that he is the newest addition to the team as we approach the 2013/14 season! He was able to spend a month out in [&hellip;]</p>
+				</div>
+			</li>
+			<li>
+				<iframe src="http://player.vimeo.com/video/70885416" width="780" height="439" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				<div class="caption">
+					<p>Aurora: n. the dawn. We present the trailer for Aurora, our team movie for the 2012-2013 season. It was almost entirely filmed in the northeast exposing some very unique features custom to the area. Filmed &amp; Edited by: Sam Rogers &amp; Charlie Stemen Riders: Connor Gaeta, Cole Gibson, James Amodeo, Hunter Tyrrell &amp; Friends Music: [&hellip;]</p>
+				</div>
+			</li>
+			<li>
+				<iframe src="http://player.vimeo.com/video/62085918" width="780" height="439" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				<div class="caption">
+					<p>Connor taking some laps through Sugarbush Parks for the new City Prospect Apparel edit, Enjoy!</p>
 				</div>
 			</li>
 		</ul>
@@ -37,10 +49,7 @@
 				}
 			});
 
-		  // Vimeo API nonsense
-		  // var player = document.getElementById('player_1');
-		  // $f(player).addEvent('ready', ready);
-		 
+			//create functions to pair flexslider with vimeo api
 		  function addEvent(element, eventName, callback) {
 		    if (element.addEventListener) {
 		      element.addEventListener(eventName, callback, false)
@@ -59,14 +68,15 @@
 		    });
 		  }
 
+		  //init flexslider and responsive videos
 		  $(".flexslider").fitVids().flexslider({
 		      animation: "slide",
 		      useCSS: false,
 		      animationLoop: false,
 		      smoothHeight: true,
 		      before: function(slider){
-		      	var slideIndex = slider.currentSlide,
-		      			video2Pause = $('.flexslider li.flex-active-slide iframe').attr('id'),
+		      	//pause video before moving to next slide
+		      	var video2Pause = $('.flexslider li.flex-active-slide iframe').attr('id'),
 		      			player = document.getElementById(video2Pause);
 		      	if(player){
 		      		$f(player).api('pause');

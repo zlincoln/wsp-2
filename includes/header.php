@@ -24,7 +24,7 @@
 		<nav class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="index.php"><img src="images/logo-white.png" alt="HG Skis" class="img-responsive"></a>
+					<a class="navbar-brand" href="index.php"></a>
 					<a href="#footer-nav" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle Navigation</span>
 						<span class="icon-bar"></span>
