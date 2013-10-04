@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-		<title>HG Skis :: Home</title>
+		<title>HG Skis | Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<!--[if lt IE 9]>
@@ -14,7 +13,7 @@
 	<script type="text/javascript" src="js/jquery.fitvid.js"></script>
 	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 </head>
-<body>
+<body class="static-header">
 	<header class="clearfix">
 		<nav class="navbar" role="navigation">
 			<div class="container">
@@ -27,12 +26,12 @@
 						<span class="icon-bar"></span>
 					</a>
 				</div>
-				<ul class="main-nav nav-left clearfix">
+				<ul class="main-nav nav-left">
 										<li  class="active"><a href="index.html">Home</a></li> 
 										<li ><a href="skis.php">Skis</a></li> 
 										<li ><a href="goods.php">Goods</a></li> 
 									</ul>
-				<ul class="main-nav nav-right clearfix">
+				<ul class="main-nav nav-right">
 										<li ><a href="family.php">Family</a></li> 
 										<li ><a href="media.php">Media</a></li> 
 										<li ><a href="about.php">About</a></li> 
@@ -130,20 +129,37 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="copyright-holder">
-				<img src="http://placehold.it/90x57" alt="hg watermark">
-				<span>Copyright &copy;2013 | HG Skis | All rights reserved</span>
+			<div class="col-12">
+				<div class="inner-wrap">
+					<div class="copyright-holder">
+						<img src="http://placehold.it/90x57" alt="hg watermark">
+						<span>Copyright &copy;2013 | HG Skis | All rights reserved</span>
+					</div>
+					<nav class="social-nav pull-right">
+						<ul>
+							<li><a href="http://www.facebook.com/hgskis" target="_blank"><i class="icon icon-facebook"></i></a></li>
+							<li><a href="http://vimeo.com/hgskis" target="_blank"><i class="icon icon-facebook"></i></a></li>
+							<li><a href="http://facebook.com" target="_blank"><i class="icon icon-facebook"></i></a></li>
+							<li><a href="http://facebook.com" target="_blank"><i class="icon icon-facebook"></i></a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
-			<nav class="social-nav pull-right">
-				<ul>
-					<li><a href="http://www.facebook.com/hgskis" target="_blank"><i class="icon icon-facebook"></i></a></li>
-					<li><a href="http://vimeo.com/hgskis" target="_blank"><i class="icon icon-facebook"></i></a></li>
-					<li><a href="http://facebook.com" target="_blank"><i class="icon icon-facebook"></i></a></li>
-					<li><a href="http://facebook.com" target="_blank"><i class="icon icon-facebook"></i></a></li>
-				</ul>
-			</nav>
 		</div>
 	</div>	
 </footer>
+<script type="text/javascript">
+	//utilities
+	//@todo: remove these at launch
+	function bodyClassHome(){
+		$('body').toggleClass('static-header');
+	}
+	function logoSwitch(){
+		$('.navbar-brand').toggleClass('reduced');
+	}
+	//@todo: set min height for body to window.height
+	//@todo: set flexslider max-height dependant on window.height
+	//@todo: if html.height is less than window.height+header.height apply static-header class to body
+</script>
 </body>
 </html>
