@@ -1,0 +1,31 @@
+#news{
+	margin-top: 40px;
+}
+
+div.jumbotron{
+	background: transparent url(../images/electronics60degrees.png) center 20% no-repeat;
+}
+
+div.action-items-wrap{
+	@purple: #2d254a;
+	background: @purple;
+	div.action-item{
+		border-left: 1px solid #fff;
+		a.btn{
+			display: block;
+			img.img-responsive{
+				margin: 0 auto;
+				max-height: 178px;
+			}
+			p{
+				color: #fff;
+				font-size: 1.4em;
+				font-weight: bold;
+				margin-top: 8px;
+			}
+		}
+		&:first-child{
+			border-left: none;
+		}
+	}
+}
