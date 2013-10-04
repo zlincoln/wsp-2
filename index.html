@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HG Skis :: Home</title>
+		<title>HG Skis :: Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<!--[if lt IE 9]>
@@ -18,8 +19,7 @@
 		<nav class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="index.php">
-						<img src="images/logo-white.png" alt="HG Skis" class="img-responsive"></a>
+					<a class="navbar-brand" href="index.html"></a>
 					<a href="#footer-nav" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle Navigation</span>
 						<span class="icon-bar"></span>
@@ -27,59 +27,70 @@
 						<span class="icon-bar"></span>
 					</a>
 				</div>
-				<ul class="nav-left">
-					<li  class="active">
-						<a href="index.html">Home</a>
-					</li>
-					<li >
-						<a href="skis.php">Skis</a>
-					</li>
-					<li >
-						<a href="goods.php">Goods</a>
-					</li>
-				</ul>
-				<ul class="nav-right">
-					<li >
-						<a href="family.php">Family</a>
-					</li>
-					<li >
-						<a href="media.php">Media</a>
-					</li>
-					<li >
-						<a href="about.php">About</a>
-					</li>
-				</ul>
+				<ul class="main-nav nav-left clearfix">
+										<li  class="active"><a href="index.html">Home</a></li> 
+										<li ><a href="skis.php">Skis</a></li> 
+										<li ><a href="goods.php">Goods</a></li> 
+									</ul>
+				<ul class="main-nav nav-right clearfix">
+										<li ><a href="family.php">Family</a></li> 
+										<li ><a href="media.php">Media</a></li> 
+										<li ><a href="about.php">About</a></li> 
+									</ul>
 			</div>
 		</nav>
 	</header>
-	<section class="hero">
-		<div class="flexslider">
-			<ul class="slides">
-				<li>
-					<iframe id="player_1" src="http://player.vimeo.com/video/39683393?api=1&player_id=player_1" width="500" height="281" frameborder="0" wekitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-					<div class="caption">
-						<p>
-							Example caption for the video, its really long.  Really Really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long.
-						</p>
-					</div>
-				</li>
-				<li>
-					<img src="http://placehold.it/3000x1000" alt="placeholder image">
-					<div class="caption">
-						<p>
-							Example caption for the image, its really long.  Really Really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long.
-						</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<script type="text/javascript">
+<section class="hero">
+	<div class="flexslider">
+		<ul class="slides">
+			<li>
+				<iframe src="//player.vimeo.com/video/75268264?portrait=0" width="525" height="310" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<div class="caption">
+					<p>We are getting ready to unveil our newest ski, the Stinger. Pre-Order dropping October 4th&#8230; Edit: Sam Rogers</p>
+				</div>
+			</li>
+			<li>
+				<iframe src="//player.vimeo.com/video/74658496?portrait=0" width="520" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<div class="caption">
+					<p>We brought Cole along on an urban trip halfway through this past season and from then on we knew he was a perfect addition to the crew. Were happy to announce that he is the newest addition to the team as we approach the 2013/14 season! He was able to spend a month out in [&hellip;]</p>
+				</div>
+			</li>
+			<li>
+				<iframe src="http://player.vimeo.com/video/70885416" width="780" height="439" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				<div class="caption">
+					<p>Aurora: n. the dawn. We present the trailer for Aurora, our team movie for the 2012-2013 season. It was almost entirely filmed in the northeast exposing some very unique features custom to the area. Filmed &amp; Edited by: Sam Rogers &amp; Charlie Stemen Riders: Connor Gaeta, Cole Gibson, James Amodeo, Hunter Tyrrell &amp; Friends Music: [&hellip;]</p>
+				</div>
+			</li>
+			<li>
+				<iframe src="http://player.vimeo.com/video/62085918" width="780" height="439" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				<div class="caption">
+					<p>Connor taking some laps through Sugarbush Parks for the new City Prospect Apparel edit, Enjoy!</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
 		$(function() {
-		 
-		  // Vimeo API nonsense
-		  var player = document.getElementById('player_1');
-		  $f(player).addEvent('ready', ready);
-		 
+			// prep videos for api calls
+		 	// @todo: make sure to get ie8 indexof polyfill before release
+			$('.flexslider iframe').each(function(index){
+				var video = $(this),
+						source = video.attr('src');
+				if(source.indexOf('vimeo') != -1){
+					var cutoffPoint,
+							updatedSource;
+					cutoffPoint = source.indexOf('?');
+					updatedSource = source.substring(0, (cutoffPoint != -1) ? cutoffPoint : source.length);
+					video.attr({
+						id: 'player_'+index,
+						src: updatedSource+'?api=1&amp;player_id=player_'+index
+					});
+					var player = document.getElementById('player_'+index);
+					$f(player).addEvent('ready', ready);
+				}
+			});
+
+			//create functions to pair flexslider with vimeo api
 		  function addEvent(element, eventName, callback) {
 		    if (element.addEventListener) {
 		      element.addEventListener(eventName, callback, false)
@@ -98,49 +109,41 @@
 		    });
 		  }
 
+		  //init flexslider and responsive videos
 		  $(".flexslider").fitVids().flexslider({
 		      animation: "slide",
 		      useCSS: false,
 		      animationLoop: false,
 		      smoothHeight: true,
 		      before: function(slider){
-		        $f(player).api('pause');
+		      	//pause video before moving to next slide
+		      	var video2Pause = $('.flexslider li.flex-active-slide iframe').attr('id'),
+		      			player = document.getElementById(video2Pause);
+		      	if(player){
+		      		$f(player).api('pause');
+		      	}
 		      }
 		  });
 		});
 	</script>
-	</section>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="copyright-holder">
-					<img src="http://placehold.it/90x57" alt="hg watermark">
-					<span>Copyright &copy;2013 | HG Skis | All rights reserved</span>
-				</div>
-				<nav class="social-nav pull-right">
-					<ul>
-						<li>
-							<a href="http://www.facebook.com/hgskis" target="_blank"> <i class="icon icon-facebook"></i>
-							</a>
-						</li>
-						<li>
-							<a href="http://vimeo.com/hgskis" target="_blank"> <i class="icon icon-facebook"></i>
-							</a>
-						</li>
-						<li>
-							<a href="http://facebook.com" target="_blank">
-								<i class="icon icon-facebook"></i>
-							</a>
-						</li>
-						<li>
-							<a href="http://facebook.com" target="_blank">
-								<i class="icon icon-facebook"></i>
-							</a>
-						</li>
-					</ul>
-				</nav>
+</section>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="copyright-holder">
+				<img src="http://placehold.it/90x57" alt="hg watermark">
+				<span>Copyright &copy;2013 | HG Skis | All rights reserved</span>
 			</div>
+			<nav class="social-nav pull-right">
+				<ul>
+					<li><a href="http://www.facebook.com/hgskis" target="_blank"><i class="icon icon-facebook"></i></a></li>
+					<li><a href="http://vimeo.com/hgskis" target="_blank"><i class="icon icon-facebook"></i></a></li>
+					<li><a href="http://facebook.com" target="_blank"><i class="icon icon-facebook"></i></a></li>
+					<li><a href="http://facebook.com" target="_blank"><i class="icon icon-facebook"></i></a></li>
+				</ul>
+			</nav>
 		</div>
-	</footer>
+	</div>	
+</footer>
 </body>
 </html>
