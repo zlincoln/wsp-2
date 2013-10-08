@@ -102,6 +102,41 @@ footer{
 	margin-top: 20px;
 	div.inner-wrap{
 		border-top: 1px solid @black;
+		padding-top: 10px;
+		padding-bottom: 40px;
+	}
+	nav.social-nav{
+		padding-top: 10px;
+		ul{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			li{
+				display: inline-block;
+				*display: inline;
+				*zoom: 1;
+				a{
+					i.icon{
+						display: block;
+						height: 22px;
+						width: 24px;
+						background: transparent url(../images/social-sprite.png) left top no-repeat;
+						&.icon-facebook{
+							background-position: 0 0;
+						}
+						&.icon-vimeo{
+							background-position: -25px 0;
+						}
+						&.icon-instagram{
+							background-position: -50px 0;
+						}
+						&.icon-twitter{
+							background-position: -75px 0;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

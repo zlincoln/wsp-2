@@ -8,6 +8,7 @@
 				console.log('here');
 				// window.location = $(this).attr('href');
 			}
+			//@todo: create method if two instances of .item-gallery
 			var index = $(this).index(),
 					target = $('#detail-target'),
 					currDetailIndex = parseInt(target.data('curr-detail'));
