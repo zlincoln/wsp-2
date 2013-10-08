@@ -5,11 +5,10 @@ section.gallery-detail-template{
 		border-bottom: 1px solid @black;
 		margin-bottom: 20px;
 		.item-viewport{
-			.col-md-8();
-			.col-sm-6();
+
 		}
 	}
-	#item-gallery{
+	.item-gallery{
 		a.item-wrapper{
 			div.item-details{
 				&>*{
@@ -19,6 +18,12 @@ section.gallery-detail-template{
 					display: block;
 				}
 			}
+		}
+	}
+	&.detail-view{
+		#detail-target{
+			display: block;
+			border-bottom: none;
 		}
 	}
 }
