@@ -29,6 +29,13 @@
 	function logoSwitch(){
 		$('.navbar-brand').toggleClass('reduced');
 	}
+	//end utils
+
+	$(function(){
+		$('body').addClass('js-enabled');
+	});
+
+
 	//@todo: set min height for body to window.height
 	//@todo: set flexslider max-height dependant on window.height
 	//@todo: if html.height is less than window.height+header.height apply static-header class to body

@@ -1,0 +1,24 @@
+section.gallery-detail-template{
+	#detail-target{
+		//styles for when markup poured into detail window
+		display: none;
+		border-bottom: 1px solid @black;
+		margin-bottom: 20px;
+		.item-viewport{
+			.col-md-8();
+			.col-sm-6();
+		}
+	}
+	#item-gallery{
+		a.item-wrapper{
+			div.item-details{
+				&>*{
+					display: none;
+				}
+				.item-title{
+					display: block;
+				}
+			}
+		}
+	}
+}
