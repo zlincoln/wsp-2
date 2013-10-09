@@ -5,11 +5,24 @@ section.gallery-detail-template{
 		border-bottom: 1px solid @black;
 		margin-bottom: 20px;
 		.item-viewport{
-
+			img{
+				max-height: 500px;
+			}
+			iframe{
+				display: none;
+			}
 		}
 	}
 	.item-gallery{
 		a.item-wrapper{
+			div.item-viewport{
+				img{
+					max-height: 240px;
+				}
+				iframe{
+					display: none;
+				}
+			}
 			div.item-details{
 				&>*{
 					display: none;
