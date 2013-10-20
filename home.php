@@ -69,6 +69,7 @@
 		  }
 
 		  //init flexslider and responsive videos
+		  //@todo: 10sec delay
 		  $(".flexslider").fitVids().flexslider({
 		      animation: "slide",
 		      useCSS: false,
