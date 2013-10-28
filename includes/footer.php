@@ -23,8 +23,14 @@
 <script type="text/javascript">
 	//utilities
 	//@todo: remove these at launch
-	function bodyClassHome(){
+	function toggleStaticHeader(){
 		$('body').toggleClass('static-header');
+		//@todo: remove these returns before production
+		if($('body').hasClass('static-header')){
+			return "Header is currently static";
+		}else{
+			return "Header is currently fixed";
+		}
 	}
 	function logoSwitch(){
 		$('.navbar-brand').toggleClass('reduced');
