@@ -39,6 +39,20 @@
 
 	$(function(){
 		$('body').addClass('js-enabled');
+		var headerOffset = $('header').offset().top;
+
+		var stickyNav = function(){
+			windowTop = $(window).scrollTop();
+			if(windowTop >= headerOffset){
+				$('body').addClass('static-header');
+			}else{
+				$('body').removeClass('static-header');
+			}
+		}
+
+		// $(window).on('scroll', function(){
+		// 	stickyNav();
+		// });
 	});
 
 
